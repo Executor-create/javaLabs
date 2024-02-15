@@ -1,14 +1,14 @@
-import java.util.ArrayList;
 import java.util.List;
 
-class Kiosk {
+public class Kiosk {
   private String title;
   private String address;
-  public List<Hour> hours = new ArrayList<Hour>();
+  private List<Hour> hours;
 
-  Kiosk(String title, String address) {
+  Kiosk(String title, String address, List<Hour> hours) {
     this.title = title;
     this.address = address;
+    this.hours = hours;
   }
 
   public String getTitle() {
@@ -46,33 +46,5 @@ class Kiosk {
         System.out.println("Comment containing '" + text + "': " + hour.getComment());
       }
     }
-  }
-
-  public void displayInfo() {
-    System.out.println("Title of kiosk: " + title);
-    System.out.println("Address of kiosk: " + address);
-  }
-}
-
-class Hour {
-  private int amount;
-  private String comment;
-
-  Hour(int amount, String comment) {
-    this.amount = amount;
-    this.comment = comment;
-  }
-
-  public int getAmount() {
-    return amount;
-  }
-
-  public String getComment() {
-    return comment;
-  }
-
-  public void displayInfo() {
-    System.out.println("Amount of clients: " + amount);
-    System.out.println("Comment " + comment);
   }
 }
